@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-    crossorigin="anonymous"
-  />
+    rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <title>Personl-Budget-Tracker</title>
+    <title>Personl-Budget-Tracker </title>
 </head>
 <body>
-    <div class="row container">
-        <h1>Personal-budget-tracker</h1>
+    <div class="row  container">
+        <!-- <h2>Personal-budget-tracker-By-Zikrah <i class="fas fa-heart" ></i></h2> -->
         <div class="expense">
             <form action="">
                 <h2>Expenses</h2>
@@ -35,7 +33,9 @@
                 <input type="date" name="" id="">
                </div>
               
+               <div>
                 <button>Add Expense</button>
+               </div>
               
             </form>
         </div>
@@ -66,7 +66,7 @@
                     </svg>
                   </div>
                   <div class="mb-2 expense-text">
-                    <span class="summary-text">Total Income:</span>
+                    <span class="summary-text">Total Expenses:</span>
                   </div>
                   <span id="totalExpenses" class="summary-text">$0.00</span>
                 </div>
@@ -122,14 +122,33 @@
                     </svg>
                   </div>
                   <div class="mb-2 expense-text">
-                    <span class="summary-text">Balance Expense:</span>
+                    <span class="summary-text">Maximum Expense:</span>
                   </div>
                   <div id="maximumExpense" class="summary-text">$0.00</div>
                 </div>
               </div>
             </div>
-          </div>
+    </div>
+      <!-- table section -->
+      <div class="table-container">
+        <h2 class="text-2xl font-bold mb-4">Expenses</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Expense Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Date</th>
+                <!-- <th>Ed/it</th> -->
+                <!-- <th>Delete</th> -->
+              </tr>
+            </thead>
+            <tbody id="expensesTable">
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
 </body>
 </html>
