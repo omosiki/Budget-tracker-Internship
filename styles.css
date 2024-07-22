@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Mooli", sans-serif;
+    /* font-weight: 400; */
+}
+
+.container{
+    width: 100%;
+    display: flex;
+}
+.container h1{
+  
+    text-align: center;
+}
+.expense{
+/* flex: 1; */
+width: 250px;
+background-color: #ffffff;
+border-radius: 10px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+/* padding: 20px; */
+margin: 30px;
+}
+  
+.expense h2{
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.expense div{
+    
+    padding: 6px;
+
+}
+.expense label{
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #0c0c0c;
+}
+.expense input{
+    padding: 8px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+    
+}
+button{
+    padding: 10px;
+    margin:  20px 4px;
+    background: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+   
+}
+button:hover{
+    background: white;
+    border: 1px solid #aaa;
+    color: black;
+}
+/* summary section */
