@@ -1,36 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Mooli", sans-serif;
-    /* font-weight: 400; */
+/* @import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css"; */
+/* @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap'); */
+body{
+    font-family: "Arial", sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
 }
 
-.container{
-    /* width: 100%; */
+/* #contain-one{ */
+    /* box-shadow: 0px 0px 10px #0000001a; */
+
+.row {
     display: flex;
     justify-content: space-between;
-    margin: 40px
-
-
-}
-.container h2{
+    flex-wrap: wrap;
+  }
+  #card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+    padding: 20px;
+  }
+  .summary- {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    
+  }
+/* .container h2{
     text-align: center;
 }
 
 .expense{
 /* flex: 1; */
-width: 250px;
+/* width: 250px;
 background-color: #ffffff;
 border-radius: 10px;
 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 margin:  20px 0;
 
-}
+} */
   
-.expense h2{
+/* .expense h2{
     text-align: center;
     font-weight: 400;
     margin-bottom: 10px;
@@ -40,22 +54,22 @@ margin:  20px 0;
     padding: 10px;
     /* margin: 0 10px; */
 
-}
-.expense label{
+
+/* .expense label{
     padding-bottom: 10px;
     font-size: 20px;
     font-weight: 500;
     color: #0c0c0c;
     display: block;
-}
-.expense input{
+}  */
+/* .expense input{
     padding: 8px;
     border-radius: 5px;
     outline: none;
     border: 1px solid #aaa;
     
-}
-button{
+} */
+/* button{
     padding: 10px;
     margin:  20px 4px;
     background: black;
@@ -72,9 +86,6 @@ button:hover{
     color: black;
 }
 /* summary section */
-.card{
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    border-radius: 10px;
-    border: none;
-}
+/* .contain-tow{ */
+    /* display: grid; */
+/* grid-template-columns: repeat(2fr,1fr); */ 
