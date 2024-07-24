@@ -8,20 +8,19 @@
     <title>Personl-Budget-Tracker </title>
 </head>
 <body>
-
   <div class="container mt-6">
         <div class="row">
            <div class="col-md-6" id="card">
             <h2 class=" font-bold mb-4 text-center">Expense Form</h2>
             <form id="expenseForm">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="expenseName" placeholder="Enter your name" required>
+                    <label for="name">ExpenseName</label>
+                    <input type="text" class="form-control" id="expenseName" placeholder="ExpenseName" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="number" class="form-control" id="price" placeholder="Enter price" required>
+                    <label for="price">Amount</label>
+                    <input type="number" class="form-control" id="amount" placeholder="Enter price" required>
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
@@ -31,7 +30,7 @@
                     <label for="date">Date</label>
                     <input type="date" class="form-control" id="date" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
             </form>
         </div>
 
@@ -69,6 +68,7 @@
     </div>
   </div>
 </div>
+<script src="app.js"></script>
 </body>
 </html>
 
