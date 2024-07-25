@@ -19,6 +19,8 @@ function AccessTheArray(){
             `
             displayUserdata.appendChild(createRow)
         })
+
+
         document.querySelectorAll(".edit-button").forEach((editbutton)=>{
             editbutton.addEventListener("click", function (){
                 const index = this.getAttribute("data-index")
@@ -35,6 +37,7 @@ function AccessTheArray(){
                 })
             })
     }
+    
     function editdata(index){
         const data = expense[index]
         console.log(data)
@@ -79,15 +82,18 @@ function deleteExpense(index){
     AccessTheArray()
 }
 }
+
+
 let expenseForm = document.getElementById("expenseForm")
 const button = document.getElementById("submit")
 button.addEventListener("click", function(element){
     element.preventDefault()
     const expenseNames = document.getElementById("expenseName").value;
     // const amounts = parseFloat(document.getElementById("amount").value);
-    const amounts = document.getElementById("amount").value;
+    const amounts = document.getElementById("amount")
     const categorys = document.getElementById("category").value;
     const dates = document.getElementById("date").value;
+
     // console.log(expenseName, amount, category, date)
     // validate form input
     if(!expenseNames || isNaN(amounts)  || !categorys  || !dates){
