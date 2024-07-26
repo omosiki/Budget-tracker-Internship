@@ -15,19 +15,14 @@
             <h2 class=" font-bold mb-4 text-center">Expense Form</h2>
             <form id="expenseForm">
                 <div class="form-group">
-                    <label for="name">Budget</label>
-                    <!-- <p class="hide error" id="budget-error">value cannot be empty or navigate</p> -->
-                    <!-- <input type="number" class="form-control" id="total-amounts" placeholder="Budget" required> -->
-                </div>
-                <div class="form-group">
                   <label for="name">ExpenseName</label>
                   <input type="text" class="form-control" id="expenseName" placeholder="ExpenseName" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="price">Amount</label>
-                    <input type="number" class="form-control" id="amount" placeholder="Enter price" required>
-                </div>
+                    <label for="price">Amount</label> 
+                    <input type="number" class="form-control" id="amount" placeholder=" $00-00 00" required>
+             </div>
                 <div class="form-group">
                   <label for="category">Category</label>
                   <input type="text" class="form-control" id="category" placeholder="Category" required>
@@ -43,15 +38,44 @@
         <div class="col-md-6" >
             <div class="summary">
               <h2 class="text-2xl font-bold mb-4 text-center " >Summary Statistic</h2>
-            <div id="summary" class="border p-3"  >
-                <p><strong>Total Amount:</strong> $<span id="totalAmount">0.00</span></p>
-                <p><strong>Amount Spent:</strong> $<span id="expenditure-value">0.00</span></p>
-                <p><strong>Remaining Balance:</strong> $<span id="balance-amount">0.00</span></p>
+            <!-- <div id="summary" class="border p-3"  >
+                
+                
+            </div> -->
+            <div class="wrapper">
+
+            
+            <div class="drop">
+              <div class="mb-2 expense-text">
+             <div>
+              <i class="fa fa-dollar-sign"></i>
+             </div>
+                <span class="summary-text">Total Expense:</span>
+              </div>
+              <div id="totalExpense" class="summary-text">$0.00</div>
             </div>
+            <div class="drop">
+              <div class="mb-2 expense-text">
+             <div>
+              <i class="fa fa-arrow-down"></i>
+             </div>
+
+                <span class="summary-text">average Expense:</span>
+              </div>
+              <div id="averageExpense" class="summary-text">$0.00</div>
             </div>
-        </div>
+            <div class="drop" >
+              <div class="mb-2 expense-text">
+                <div>
+                  <i class="fa fa-square-plus"></i>
+                </div>
+                <span class="summary-text">Maximum Expense:</span>
+              </div>
+              <div id="maximumExpense" class="summary-text">$0.00</div>
+            </div>
+          </div>
+            </div>
     </div>
-  
   </div>
   <div class="container mt-5">
     <h2>Expense</h2>

@@ -1,5 +1,6 @@
-let expense = []
-function AccessTheArray(){
+ let expense = []
+function AccessTheArray(data){
+    console.log("Updating expenses table:", expense);
     const displayUserdata = document.getElementById("expensesTable")
     displayUserdata.innerHTML = ""
     if(expense === 0){
@@ -11,16 +12,59 @@ function AccessTheArray(){
             const createRow = document.createElement("tr")
             createRow.innerHTML = `
             <td>${data.expenseNames}</td>
-            <td>${data.amounts}</td>
+            <td>${data.amounts.toFixed(2)}</td>
+    
             <td>${data.categorys}</td>
             <td>${data.dates}</td>
             <td><button class="edit-button" data-index="${index}" ">Edit</button></td>
           <td><button class="delete-button" data-index="${index}">Delete</button></td>
             `
             displayUserdata.appendChild(createRow)
+            updateSummaryStatistics(data)
         })
-
-
+        function updateSummaryStatistics(data) {
+            console.log("Updating summary statistics:", expense);
+            const totalExpenses = expense.reduce(
+              (total, data) => total + data.amounts,
+              0
+            );
+            const averageExpense = expense.length
+              ? totalExpenses / expense.length
+              : 0;
+            const maximumExpense = expense.length
+              ? Math.max(...expense.map((data) => data.amounts))
+              : 0;
+          
+            document.getElementById("totalExpense").innerText = `$${totalExpenses.toFixed(2)}`;
+            document.getElementById("averageExpense").innerText = `$${averageExpense.toFixed(2)}`;
+            document.getElementById("maximumExpense").innerText = `$${maximumExpense.toFixed(2)}`;
+          }
+       }
+    //    function updateSummaryStatistics() {
+    //     console.log("Updating summary statistics:", expense);
+    //     const totalExpenses = expense.reduce(
+    //       (total, data) => total + data.amounts,
+    //       0
+    //     );
+    //     const averageExpense = expense.length
+    //       ? totalExpenses / expense.length
+    //       : 0;
+    //     const maximumExpense = expense.length
+    //       ? Math.max(...expense.map((data) => data.amounts))
+    //       : 0;
+    
+    //     document.getElementById(
+    //       "totalExpenses"
+    //     ).innerText = `$${totalExpenses.toFixed(2)}`;
+    //     document.getElementById(
+    //       "averageExpense"
+    //     ).innerText = `$${averageExpense.toFixed(2)}`;
+    //     document.getElementById(
+    //       "maximumExpense"
+    //     ).innerText = `$${maximumExpense.toFixed(2)}`;
+    //   }
+    
+       
         document.querySelectorAll(".edit-button").forEach((editbutton)=>{
             editbutton.addEventListener("click", function (){
                 const index = this.getAttribute("data-index")
@@ -36,37 +80,43 @@ function AccessTheArray(){
                     deleteExpense(index)
                 })
             })
-    }
-    
-    function editdata(index){
-        const data = expense[index]
-        console.log(data)
-        const create = document.createElement("tr")
-        create.innerHTML = `
-            <td><input type="text" id="editExpenseName"  value="${data.expenseNames}"</td>
-            <td><input type="amount" id="editAmount" value="${data.amounts}"</td>
-            <td><input type="text" id="editCategory" value="${data.categorys}"</td>
-            <td><input type="date" id="editDate" value="${data.dates}"</td>
-          
-            <td><button class="save-button" data-index="${index}" style=" border-radius:9px;">Save </button></td>
-            <td><button class="cancel-button" data-index="${index}">cancel </button></td>
-        `;
-        // replace the existing row with data
-        const displayUserdata = document.getElementById("expensesTable")
-        displayUserdata.replaceChild(create,displayUserdata.childNodes[index] )
-        //add event listener to save and cancel button
+
+}       
+ 
+
+ 
+ function editdata(index){
+    const data = expense[index]
+    console.log(data)
+    const create = document.createElement("tr")
+    create.innerHTML = `
+        <td><input type="text" id="editExpenseName"  value="${data.expenseNames}"</td>
+        <td><input type="amount" id="editAmount" value="${data.amounts}"</td>
+        <td><input type="text" id="editCategory" value="${data.categorys}"</td>
+        <td><input type="date" id="editDate" value="${data.dates}"</td>
       
-        document
-           .querySelector(`.save-button[data-index="${index}"]`)
-           .addEventListener("click", function (){
-            saveExpense(index)
-        })
-        document
-           .querySelector(`.cancel-button[data-index="${index}"]`)
-           .addEventListener("click", function (){
-            AccessTheArray()
-        })      
+        <td><button class="save-button" data-index="${index}" style=" border-radius:9px;">Save </button></td>
+        <td><button class="cancel-button" data-index="${index}">cancel </button></td>
+    `;
+      // replace the existing row with data
+      const displayUserdata = document.getElementById("expensesTable")
+      displayUserdata.replaceChild(create,displayUserdata.childNodes[index] )
+      //add event listener to save and cancel button
+    
+      document
+         .querySelector(`.save-button[data-index="${index}"]`)
+         .addEventListener("click", function (){
+          saveExpense(index)
+      })
+      document
+         .querySelector(`.cancel-button[data-index="${index}"]`)
+         .addEventListener("click", function (){
+          AccessTheArray()
+          updateSummaryStatistics(data)
+      })      
 }
+
+      
 function saveExpense(index){
     //update with edited value
     expense[index].expenseNames = document.getElementById("editExpenseName").value
@@ -76,11 +126,14 @@ function saveExpense(index){
 //    expense[index].dates = document.getElementById("editdate").value
    console.log(expense[index])
    AccessTheArray()
+   updateSummaryStatistics(data)
 }
+
+
 function deleteExpense(index){
     expense.splice(index,1)
     AccessTheArray()
-}
+    updateSummaryStatistics(data)
 }
 
 
@@ -89,12 +142,11 @@ const button = document.getElementById("submit")
 button.addEventListener("click", function(element){
     element.preventDefault()
     const expenseNames = document.getElementById("expenseName").value;
-    // const amounts = parseFloat(document.getElementById("amount").value);
-    const amounts = document.getElementById("amount")
+    const amounts = parseFloat(document.getElementById("amount").value);
     const categorys = document.getElementById("category").value;
     const dates = document.getElementById("date").value;
+    console.log(expenseNames, amounts, categorys, dates)
 
-    // console.log(expenseName, amount, category, date)
     // validate form input
     if(!expenseNames || isNaN(amounts)  || !categorys  || !dates){
         alert("Please fill in all fields with valid data.")
@@ -104,9 +156,13 @@ button.addEventListener("click", function(element){
     // store into an array
     expense.push({expenseNames, amounts, categorys, dates})
   AccessTheArray()
-  savetolocalStorage(user)
-//   expenseForm.reset()
+ savetolocalStorage(user)
+
 })
+
+
+
+  
 function savetolocalStorage(user){
     const users = JSON.parse(localStorage.getItem("users")) ||[]
     if(!Array.isArray()){
@@ -115,3 +171,4 @@ function savetolocalStorage(user){
     users.push(user)
     localStorage.setItem("users", JSON.stringify(users))
 }
+

@@ -58,12 +58,31 @@ body{
         overflow: scroll;
         cursor: pointer;
     }
-   
+   .wrapper{
+    display: flex;
+    flex-direction: column;
+   }
  }
  
 
-
-
+.wrapper{
+   display: flex; 
+   justify-content: space-between;
+   text-align: center;
+   background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px ;
+    padding: 10px;
+}
+.expense-text{
+    display: block;
+    padding: 10px 0;
+}
+.expense-text i{
+    color: violet;
+    padding: 10px 0;
+}
 /* flex: 1; */
 /* width: 250px;
 background-color: #ffffff;
