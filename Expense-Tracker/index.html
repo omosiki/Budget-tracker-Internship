@@ -9,6 +9,7 @@
     <title>Personl-Budget-Tracker </title>
 </head>
 <body>
+ 
   <div class="container mt-6">
         <div class="row">
            <div class="col-md-6" id="card">
@@ -21,7 +22,7 @@
                 
                 <div class="form-group">
                     <label for="price">Amount</label> 
-                    <input type="number" class="form-control" id="amount" placeholder=" $00-00 00" required>
+                    <input type="amount" class="form-control" id="amount" placeholder=" $00-00 " required>
              </div>
                 <div class="form-group">
                   <label for="category">Category</label>
@@ -31,20 +32,14 @@
                     <label for="date">Date</label>
                     <input type="date" class="form-control" id="date" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="submit">Add Expense</button>
+                <button type="submit" class="btn btn-secondary"  id="submit">Add Expense</button>
             </form>
         </div>
 
         <div class="col-md-6" >
             <div class="summary">
-              <h2 class="text-2xl font-bold mb-4 text-center " >Summary Statistic</h2>
-            <!-- <div id="summary" class="border p-3"  >
-                
-                
-            </div> -->
+              <h2 class="text-2xl font-bold mb-2 text-center " >Summary Statistic</h2>
             <div class="wrapper">
-
-            
             <div class="drop">
               <div class="mb-2 expense-text">
              <div>
@@ -60,7 +55,7 @@
               <i class="fa fa-arrow-down"></i>
              </div>
 
-                <span class="summary-text">average Expense:</span>
+                <span class="summary-text">Average Expense:</span>
               </div>
               <div id="averageExpense" class="summary-text">$0.00</div>
             </div>
@@ -102,28 +97,8 @@
 </html>
 
   
-  <!-- <div class="table-container">
-    <h2 class="text-2xl font-bold mb-4">Expenses</h2>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th  scope="col">Expense Name</th>
-            <th  scope="col">Amount</th>
-            <th  scope="col">Category</th>
-            <th  scope="col">Date</th>
-            <th  scope="col">Edit</th>
-            <th  scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody id="expensesTable">
-          
-        </tbody>
-      </table>
-    </div>
-  </div> -->
-<!-- </div> -->
-
+  
+        
 
 
 
