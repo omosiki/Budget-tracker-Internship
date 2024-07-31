@@ -58,7 +58,6 @@ function AccessTheArray(){
             })
 
 }       
-
  function editdata(index){
     const data = expense[index]
     console.log(data)
@@ -103,15 +102,11 @@ function saveExpense(index){
    updateSummaryStatistics()
    
 }
-
-
 function deleteExpense(index){
     expense.splice(index,1)
     AccessTheArray()
     updateSummaryStatistics()
 }
-
-
 let expenseForm = document.getElementById("expenseForm")
 const button = document.getElementById("submit")
 button.addEventListener("click", function(element){
