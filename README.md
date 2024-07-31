@@ -43,3 +43,9 @@ javaScript.
 This setup  provide a user-friendly interface for managing expenses, allowing users to add, edit, and delete entries effectively. By showcasing the pontential of frontend development. 
 
 
+git init
+git add README.md
+git commit -m "Commiting my expense-tracker"
+git branch -M main
+git remote add origin https://github.com/omosiki/Budget-Tracker.git
+git push -u origin main
